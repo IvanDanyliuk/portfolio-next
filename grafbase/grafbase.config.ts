@@ -18,14 +18,16 @@ const Feature = g.model('Feature', {
 });
 
 const Technology = g.model('Technology', {
-  title: g.string().unique()
+  label: g.string().unique()
 });
 
-const SkillsPageContent = g.model('SkillsPageContent', {
+const AboutPageContent = g.model('AboutPageContent', {
   title: g.string(),
   story: g.string(),
   photoUrl: g.url(),
-  techStack: g.relation(() => Technology).list()
+  techSkills: g.string().list(),
+  additionalSkills: g.string().list(),
+  certificateUrls: g.url().list()
 })
 
 export default config({
